@@ -1,7 +1,8 @@
 # Red-Barrel-Classifier-Detector
-
 Name: Samuel Choi
+
 Date: Feb 6, 2020
+
 ECE 5242 Intelligent Autonomous Systems
 
 In this project, I trained a model to detect barrels in images and find the relative world coordinates of
