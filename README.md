@@ -83,25 +83,30 @@ After detecting regions of pixels detected as red barrel pixels from the
 classification images outputted as red in the output images from the
 algorithm in bayes.ipynb using the regionprops tool from the skimage
 library, several steps were used to filter images.
+
 ● First, there were many small regions of pixels that were classified as
 an area of interest. To filter those out, I took the parameter of
 minor_axis_length from each region and deleted the regions with a
 minor_axis_length less than 5.
+
 ● Next, I determined the minimum value of the region attribute
 bbox_area by taking the bbox_area of the smallest detected barrel as a
 starting point and then reduced it until it started detecting the next
 smallest red item that wasn’t a barrel. I set my threshold between
 these values at 1250.
+
 ● Next, I used the area of each region and got the percent of pixels that
 were classified as red barrel. This step was useful in getting rid of
 arbitrary detected areas with sparse detection area coverage. The
 threshold of this was set so that if under 50% of the area was filled,
 the region would be eliminated using filled_area / bbox_area as the
 calculation.
+
 ● Next, I used the ratio between the height and width of each region
 detected. Taking into account regions that may be cut off, the range
 was set to keep the regions with a ratio lying in between 1 and 3. The
-calculation for this was ​major_axis_length/​minor_axis_length.
+calculation for this was major_axis_length/minor_axis_length.
+
 ● Last, the ratio of the remaining regions to the largest region was used
 as the last filtering mechanism. This was done as some areas cut off
 from the barrels were still identifying as barrels. However, we want to
