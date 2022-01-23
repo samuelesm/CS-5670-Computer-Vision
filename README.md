@@ -22,7 +22,9 @@ different color space, changing the number of GMM or number of classes, filterin
 or a combination.
 
 # Approach
+
 ##Number of GMM:
+
 The number of GMMs used was one. There were two different classes for
 the model: barrel and not barrel. Although more GMM classes could have
 been created, just using the two classes was enough to distinguish the red
@@ -35,7 +37,9 @@ the detection of red barrels, so the separation of classification for non-barrel
 objects would have been redundant as this model only looks at color and
 not the shape of the objects. An EM algorithm could have been used, but it
 was not deemed necessary for this case.
+
 ##Color Space:
+
 The color space used was RGB. Initially, my barrel detection classification
 performed very poorly, even detecting green turf as red barrel pixels.
 However, this was fixed once I relabeled my training data pixels more
@@ -48,7 +52,9 @@ the case, I would use Photoshop or some photo editing tool with a histogram
 to see what sort of adjustments to the color space or rgb saturation levels
 would help distinguish the red pixels. Since my classification model
 distinguished the regions well, I stuck with the RGB color space.
+
 ##Filtering:
+
 After detecting regions of pixels detected as red barrel pixels from the
 classification images outputted as red in the output images from the
 algorithm in bayes.ipynb using the regionprops tool from the skimage
@@ -80,6 +86,7 @@ could be multiple barrels. As a result, all boxes with bbox_area that
 are at 30% the size of the largest barrel were kept.
 
 ##Distance:
+
 In the file, get_distance.ipynb, the estimated height and width of the barrels
 of each classified training image were determined with regionprops
 attribute, bbox, and the width and height were multiplied with the given
@@ -98,6 +105,7 @@ images. The following was the line used to calculate the estimated distance.
 np.round((450.3636363636364/w + 648.3863636363636/h)/2)
 
 #Results
+
 Below is a sample. Full results can be viewed in the pdf file in this repository
 
 In this project, I trained a model to detect barrels in images and find the relative world coordinates of
