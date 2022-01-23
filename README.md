@@ -23,7 +23,7 @@ or a combination.
 
 # Approach
 
-##Number of GMM:
+## Number of GMM:
 
 The number of GMMs used was one. There were two different classes for
 the model: barrel and not barrel. Although more GMM classes could have
@@ -38,7 +38,7 @@ objects would have been redundant as this model only looks at color and
 not the shape of the objects. An EM algorithm could have been used, but it
 was not deemed necessary for this case.
 
-##Color Space:
+## Color Space:
 
 The color space used was RGB. Initially, my barrel detection classification
 performed very poorly, even detecting green turf as red barrel pixels.
@@ -53,7 +53,7 @@ to see what sort of adjustments to the color space or rgb saturation levels
 would help distinguish the red pixels. Since my classification model
 distinguished the regions well, I stuck with the RGB color space.
 
-##Filtering:
+## Filtering:
 
 After detecting regions of pixels detected as red barrel pixels from the
 classification images outputted as red in the output images from the
@@ -85,7 +85,7 @@ not eliminate all barrels smaller than the largest one, because there
 could be multiple barrels. As a result, all boxes with bbox_area that
 are at 30% the size of the largest barrel were kept.
 
-##Distance:
+## Distance:
 
 In the file, get_distance.ipynb, the estimated height and width of the barrels
 of each classified training image were determined with regionprops
@@ -104,7 +104,7 @@ values from the training data to be used to estimate the distance of the test
 images. The following was the line used to calculate the estimated distance.
 np.round((450.3636363636364/w + 648.3863636363636/h)/2)
 
-#Results
+# Results
 
 Below is a sample. Full results can be viewed in the pdf file in this repository
 
