@@ -137,4 +137,5 @@ np.round((450.3636363636364/w + 648.3863636363636/h)/2)
 # Results
 
 Full results can be viewed in the pdf file in this repository
+[View pdf here](https://github.com/samuelesm/Red-Barrel-Classifier-Detector/blob/main/sgc87_project1.pdf)
 
