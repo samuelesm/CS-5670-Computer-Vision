@@ -3,6 +3,7 @@ Name: Samuel Choi
 
 Date: Feb 6, 2020
 
+![Red Barrel Detection](https://github.com/samuelesm/Red-Barrel-Classifier-Detector/blob/main/RedBarrelDetection.png)
 
 In this project, I trained a model to detect barrels in images and find the relative world coordinates of
 the barrel from images. To do this, I implemented algorithms for learning the color model, segmenting the
@@ -135,5 +136,5 @@ np.round((450.3636363636364/w + 648.3863636363636/h)/2)
 
 # Results
 
-Below is a sample. Full results can be viewed in the pdf file in this repository
+Full results can be viewed in the pdf file in this repository
 
